@@ -1,0 +1,11 @@
+.button {
+    -fx-background-color: #a90303;
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(from 75% 50% to 100% 100%, #7e0000, rgb(35, 0, 5));
+}
+
+.button:pressed {
+    -fx-background-color: linear-gradient(from 75% 50% to 100% 100%, #ea7979, rgb(94, 2, 12));
+}

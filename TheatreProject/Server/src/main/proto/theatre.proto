@@ -1,0 +1,137 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+
+message LoginRequest {
+  optional string username = 1;
+  optional string password = 2;
+}
+
+message LoginResponse {
+  optional string username = 1;
+  optional string password = 2;
+  optional int64 id = 3;
+  optional int32 type = 4;
+  optional string error = 5;
+}
+
+message LogoutRequest {
+  optional int64 id = 1;
+}
+
+message LogoutResponse {}
+
+message AddShowRequest {
+  optional string name = 1;
+  optional string description = 2;
+  optional google.protobuf.Timestamp date = 3;
+}
+
+message AddShowResponse {
+  optional string name = 1;
+  optional string description = 2;
+  optional google.protobuf.Timestamp date = 3;
+  optional int64 id = 4;
+  optional int32 type = 5;
+  optional string error = 6;
+}
+
+message SeatMessage {
+  optional int64 id = 1;
+  optional int32 row = 2;
+  optional int32 number = 3;
+  optional int32 box = 4;
+  optional int32 price = 5;
+}
+
+message GetAllSeatsRequest {}
+
+message GetAllSeatsResponse {
+  repeated SeatMessage seats = 1;
+}
+
+message GetReservedSeatsRequest {
+  optional int64 showId = 1;
+}
+
+message GetReservedSeatsResponse {
+  repeated SeatMessage seats = 1;
+}
+
+message GetShowOfTodayRequest {}
+
+message GetShowOfTodayResponse {
+  optional int64 id = 1;
+  optional string name = 2;
+  optional string description = 3;
+  optional google.protobuf.Timestamp date = 4;
+  optional int32 type = 5;
+  optional string error = 6;
+}
+
+message ShowMessage {
+  optional int64 id = 1;
+  optional string name = 2;
+  optional string description = 3;
+  optional google.protobuf.Timestamp date = 4;
+}
+
+message GetAllShowsRequest {}
+
+message GetAllShowsResponse {
+  repeated ShowMessage shows = 1;
+}
+
+message DeleteShowRequest {
+  optional int64 id = 1;
+  optional string name = 2;
+  optional string description = 3;
+  optional google.protobuf.Timestamp date = 4;
+}
+
+message DeleteShowResponse {
+  optional int64 id = 1;
+  optional int32 type = 2;
+  optional string error = 3;
+}
+
+message UpdateShowRequest {
+  optional int64 id = 1;
+  optional string name = 2;
+  optional string description = 3;
+  optional google.protobuf.Timestamp date = 4;
+}
+
+message UpdateShowResponse {
+  optional string name = 1;
+  optional string description = 2;
+  optional google.protobuf.Timestamp date = 3;
+  optional int64 id = 4;
+  optional int32 type = 5;
+  optional string error = 6;
+}
+
+message GetShowOfADayRequest {
+  optional google.protobuf.Timestamp date = 1;
+}
+
+message GetShowOfADayResponse {
+  optional int64 id = 1;
+  optional string name = 2;
+  optional string description = 3;
+  optional google.protobuf.Timestamp date = 4;
+  optional int32 type = 5;
+  optional string error = 6;
+}
+
+service TheatreService {
+  rpc login(LoginRequest) returns (LoginResponse) {}
+  rpc logout(LogoutRequest) returns (LogoutResponse) {}
+  rpc addShow(AddShowRequest) returns (AddShowResponse) {}
+  rpc deleteShow(DeleteShowRequest) returns (DeleteShowResponse) {}
+  rpc updateShow(UpdateShowRequest) returns (UpdateShowResponse) {}
+  rpc getAllSeats(GetAllSeatsRequest) returns (GetAllSeatsResponse) {}
+  rpc getReservedSeats(GetReservedSeatsRequest) returns (GetReservedSeatsResponse) {}
+  rpc getShowOfToday(GetShowOfTodayRequest) returns (GetShowOfTodayResponse) {}
+  rpc getShowOfADay(GetShowOfADayRequest) returns (GetShowOfADayResponse) {}
+  rpc getAllShows(GetAllShowsRequest) returns (GetAllShowsResponse) {}
+}

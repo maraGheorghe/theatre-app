@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="238.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LoginController">
+   <children>
+      <Label layoutX="93.0" layoutY="33.0" text="Login">
+         <textFill>
+            <LinearGradient cycleMethod="REPEAT">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.9599999785423279" green="0.019200000911951065" blue="0.019200000911951065" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.007680491551459294">
+                     <color>
+                        <Color red="0.6745098233222961" green="0.0313725508749485" blue="0.0313725508749485" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.5099846390168971">
+                     <color>
+                        <Color red="0.8100000023841858" green="0.5669999718666077" blue="0.5669999718666077" opacity="0.8938356041908264" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.6745098233222961" green="0.0313725508749485" blue="0.0313725508749485" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="usernameField" layoutX="38.0" layoutY="86.0" promptText="username">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </TextField>
+      <PasswordField fx:id="passwordField" layoutX="38.0" layoutY="126.0" promptText="password">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </PasswordField>
+      <Button fx:id="loginButton" layoutX="93.0" layoutY="241.0" mnemonicParsing="false" onAction="#handleLoginButton" style="-fx-background-color: #ac0808;" text="Login">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+         <textFill>
+            <LinearGradient cycleMethod="REPEAT">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.9599999785423279" green="0.019200000911951065" blue="0.019200000911951065" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.007680491551459294">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.5161290322580645">
+                     <color>
+                        <Color red="0.8509804010391235" green="0.6784313917160034" blue="0.6784313917160034" opacity="0.8899999856948853" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Button>
+      <Label fx:id="errorLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="38.0" layoutY="169.0" prefHeight="54.0" prefWidth="162.0" text="errors" textAlignment="CENTER" textFill="#d10505" visible="false" wrapText="true">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
