@@ -15,8 +15,8 @@ Therefore, the application includes the following functionalities:
 </ul>
 
 ### Technologies:
-Theatre schedule it's a desktop application, in which the technologies used were ***Java*** for the backend, ***JavaFx*** for the graphical interface and ***Gradle*** as automation tool.
-Since it is a client-server application, I used ***gRPC*** to define a service that specifies methods that can be called remotely.
+Theatre schedule it's a desktop application, in which the technologies used were ***Java*** for the backend, ***JavaFx*** for the graphical interface and ***Gradle*** as automation tool. <br>
+Since it is a client-server application, I used ***gRPC*** to define a service that specifies methods that can be called remotely. <br>
 Also, persistence in the database is achieved using the ***Hibernate ORM*** framework. <br>
 #### In the *Theater.mdj* file you can find *the use case diagram*, *the class diagram* and *the sequence diagrams* for the use cases. In *UseCaseDescription.pdf* file you can see the description of the use cases.
 
